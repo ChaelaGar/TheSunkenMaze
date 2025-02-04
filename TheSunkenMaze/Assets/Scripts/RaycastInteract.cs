@@ -72,6 +72,11 @@ public class RaycastInteract : MonoBehaviour
                     objectReference.key = true;
                     collected.enabled = true;
                 }
+                else if (Input.GetKeyDown(KeyCode.E) && objectReference.key == true && hit.collider.gameObject.layer == 10)
+                {
+                    objectReference.key = true;
+    
+                }
                 else if (Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject.layer == 11) 
                 {
                 objectReference.slingShot = true;
