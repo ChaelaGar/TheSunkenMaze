@@ -74,8 +74,8 @@ public class RaycastInteract : MonoBehaviour
                 }
                 else if (Input.GetKeyDown(KeyCode.E) && objectReference.key == true && hit.collider.gameObject.layer == 10)
                 {
-                    objectReference.key = true;
-    
+                    hit.collider.gameObject.GetComponent<Animator>().SetTrigger("Interact");
+
                 }
                 else if (Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject.layer == 11) 
                 {
