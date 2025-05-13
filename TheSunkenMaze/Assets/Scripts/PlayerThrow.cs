@@ -2,16 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyThrow : MonoBehaviour
+public class PlayerThrow : MonoBehaviour
 {
-
-
-    [SerializeField]
-    float pursuitDis;
-    [SerializeField]
-    float retreatDis;
-    [SerializeField]
-    float safeDis;
+ 
 
 
 
@@ -27,13 +20,14 @@ public class EnemyThrow : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // Update is called once per frame curTime >= timer
     void Update()
     {
 
         curTime += Time.deltaTime;
       
-        if (curTime >= timer)
+
+        if (Input.GetMouseButtonDown(0)) 
         {
             Instantiate(projectile, transform.position, transform.rotation);
             curTime = 0;

@@ -36,11 +36,10 @@ public class EnemyMovementNew : MonoBehaviour
     void Update()
     {
         Vector3 dir = player.transform.position - transform.position;
-
+        transform.LookAt(player.transform.position);
         if (dir.magnitude <= pursuitDis && dir.magnitude >= safeDis)
         {
             me.isStopped = false;
-            transform.LookAt(dir);
             me.destination = player.transform.position;
          me.speed = defaultSpeed;
 
@@ -49,16 +48,16 @@ public class EnemyMovementNew : MonoBehaviour
         else if (dir.magnitude <= retreatDis)
         {
             me.isStopped = false;
-            transform.LookAt(dir);
+            
             me.speed = defaultSpeed * 2;
             me.destination -= player.transform.position.normalized;
-       
+
         }
 
         else
         {
             me.isStopped = true;
-            transform.LookAt(dir);
+            
             Debug.Log("else");
 
         }
